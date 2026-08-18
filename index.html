@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Track Studio</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">COMPOSITOR POR PISTAS</p>
+        <h1>Music Track Studio</h1>
+        <p class="subtitle">Monte a música por seções e deixe baixo e bateria acompanharem sua harmonia.</p>
+      </div>
+      <div class="transport">
+        <button id="playBtn" class="primary">▶ Música inteira</button>
+        <button id="stopBtn">■ Parar</button>
+      </div>
+    </header>
+
+    <section class="controls panel">
+      <label>BPM <input id="bpm" type="number" min="40" max="240" value="120"></label>
+      <label>Tom
+        <select id="root"></select>
+      </label>
+      <label>Escala
+        <select id="scale">
+          <option value="minor">Menor</option>
+          <option value="major">Maior</option>
+          <option value="pentatonicMinor">Pentatônica menor</option>
+        </select>
+      </label>
+      <label>Guitarra
+        <select id="guitarTone">
+          <option value="modern">Metal moderno</option>
+          <option value="crunch">Crunch</option>
+          <option value="clean">Clean</option>
+        </select>
+      </label>
+      <label>Baixo
+        <select id="bassPattern">
+          <option value="root">Raiz</option>
+          <option value="rootFifth">Raiz + quinta</option>
+          <option value="octave">Raiz + oitava</option>
+        </select>
+      </label>
+      <button id="saveBtn">Salvar no navegador</button>
+    </section>
+
+    <section class="arrangement panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ARRANJO</p>
+          <h2>Estrutura da música</h2>
+        </div>
+        <span id="playStatus" class="status-pill">Parado</span>
+      </div>
+      <div id="arrangementBar" class="arrangement-bar"></div>
+    </section>
+
+    <main id="sections"></main>
+
+    <section class="panel help">
+      <h2>Como funciona</h2>
+      <p>Cada seção tem suas próprias pistas de guitarra, baixo e bateria. Programe as raízes da guitarra; o baixo pode ser regenerado automaticamente em uma região grave e a bateria recebe padrões próprios para Intro, Verse, Chorus, Bridge e Outro. Ao tocar a música inteira, o sequenciador percorre as cinco seções em ordem.</p>
+      <p><strong>Dica:</strong> a guitarra agora é sintetizada como power chord, com raiz + quinta + oitava e cadeia de drive/filtro. O áudio continua 100% gerado no navegador, sem samples externos.</p>
+    </section>
+  </div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
